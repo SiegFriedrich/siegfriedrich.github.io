@@ -194,7 +194,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-08-23 02:16:45" itemprop="dateModified" datetime="2021-08-23T02:16:45+09:00">2021-08-23</time>
+                <time title="修改时间：2021-08-23 02:34:42" itemprop="dateModified" datetime="2021-08-23T02:34:42+09:00">2021-08-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -237,7 +237,7 @@
 </blockquote>
 <p>修改conf</p>
 <p>_config.yml</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/SiegFriedrich/siegfriedrich.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">deploy</span><br><span class="line">  type: git</span><br><span class="line">  # repo: https://github.com/SiegFriedrich/siegfriedrich.github.io.git  //使用https报错了</span><br><span class="line">  # branch: master</span><br><span class="line"></span><br><span class="line">  repo: git@github.com:SiegFriedrich/siegfriedrich.github.io.git  //已经和github做好私钥公钥配对，推荐使用ssh</span><br><span class="line">  branch: main    //github默认使用main 支， 不是master</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>部署</p>
 <blockquote>
