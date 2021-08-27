@@ -20,30 +20,40 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":190,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Hello everyone~ my name is Sieg. A full-stack developer.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="从浏览器发送给服务器的数据包称之为 请求 Request 从服务器返回给浏览器的结果称之为 响应 Response  Servlet概述J2EE提供了13个模块，其中四个最为广泛重点 ：servlet jsp jdbc xml交互模块  *Tomcat是Apache软件基金会旗下一款免费开放源代码的Web应用服务器程序 J2EE（Java 2 Platform Enterprise Editi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java Learning - Servlet">
+<meta property="og:url" content="http://example.com/2021/08/25/Java%E7%B3%BB%E5%88%97%E4%B9%8B-Servlet/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Hello everyone~ my name is Sieg. A full-stack developer.">
+<meta property="og:description" content="从浏览器发送给服务器的数据包称之为 请求 Request 从服务器返回给浏览器的结果称之为 响应 Response  Servlet概述J2EE提供了13个模块，其中四个最为广泛重点 ：servlet jsp jdbc xml交互模块  *Tomcat是Apache软件基金会旗下一款免费开放源代码的Web应用服务器程序 J2EE（Java 2 Platform Enterprise Editi">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2021/08/25/photos/java/sea001.jpeg">
+<meta property="og:image" content="http://example.com/2021/08/25/photos/java/Servlet/servlet-knowledge.png">
+<meta property="og:image" content="http://example.com/2021/08/25/photos/java/servlet/servlet_construction.png">
+<meta property="og:image" content="http://example.com/2021/08/25/photos/java/Servlet/javaweb-constrct.png">
+<meta property="og:image" content="http://example.com/2021/08/25/photos/java/Servlet/javaweb-flow.png">
+<meta property="article:published_time" content="2021-08-25T06:43:18.000Z">
+<meta property="article:modified_time" content="2021-08-27T16:46:49.181Z">
 <meta property="article:author" content="Sieg Friedrich">
+<meta property="article:tag" content="Servlet">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/08/25/photos/java/sea001.jpeg">
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2021/08/25/Java%E7%B3%BB%E5%88%97%E4%B9%8B-Servlet/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>Hexo</title>
+  <title>Java Learning - Servlet | Hexo</title>
   
 
 
@@ -157,120 +167,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/25/UI-UX-Learning-1-Introduction-Getting-Started/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/WechatIMG48.jpeg">
-      <meta itemprop="name" content="Sieg Friedrich">
-      <meta itemprop="description" content="Hello everyone~ my name is Sieg. A full-stack developer.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/08/25/UI-UX-Learning-1-Introduction-Getting-Started/" class="post-title-link" itemprop="url">UI/UX Learning 01 Introduction & Getting Started</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-08-25 21:49:59" itemprop="dateCreated datePublished" datetime="2021-08-25T21:49:59+09:00">2021-08-25</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-08-26 00:22:52" itemprop="dateModified" datetime="2021-08-26T00:22:52+09:00">2021-08-26</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/UI-UX/" itemprop="url" rel="index"><span itemprop="name">UI/UX</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
 
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="../photos/ui_ux/cars_in_winter.jpg" alt="Winterscar"></p>
-<h3 id="Welcome-to-learning-UI-UX"><a href="#Welcome-to-learning-UI-UX" class="headerlink" title="Welcome to learning UI/UX"></a>Welcome to learning UI/UX</h3><p>You have to master the knowleadge of<br>Graphic Design,<br>User Experience,<br>Cool Conversion, and<br>Platform Development.</p>
-<h3 id="Recommended-Sites-could-be-used"><a href="#Recommended-Sites-could-be-used" class="headerlink" title="Recommended Sites could be used:"></a>Recommended Sites could be used:</h3><table>
-<thead>
-<tr>
-<th>Site</th>
-<th>Comment</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><a target="_blank" rel="noopener" href="https://zerotomastery.io/resources/">https://zerotomastery.io/resources/</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://goodui.org/">https://goodui.org</a></td>
-<td>learn about good patterns, good UI</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://awwwards.com/">https://awwwards.com</a></td>
-<td>for inspirations like different colors, different topics and get ideas for designs you may want to use</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://behance.net/">https://behance.net</a></td>
-<td>shows other peoples’ portfolio</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://flaticon.com/">https://flaticon.com</a></td>
-<td>for icon</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://thenounproject.com/">https://thenounproject.com</a></td>
-<td>for icon</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://unsplash.com/">https://unsplash.com</a></td>
-<td>for beautiful pics, wallpaper etc.</td>
-</tr>
-</tbody></table>
-<h3 id="—-gt-To-be-continued"><a href="#—-gt-To-be-continued" class="headerlink" title="—&gt; To be continued"></a>—&gt; To be continued</h3>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -286,10 +186,9 @@
       <meta itemprop="name" content="Hexo">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/08/25/Java%E7%B3%BB%E5%88%97%E4%B9%8B-Servlet/" class="post-title-link" itemprop="url">Java Learning - Servlet</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          Java Learning - Servlet
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -328,7 +227,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><img src="../photos/java/sea001.jpeg" alt="kamakura02"></p>
+        <p><img src="../photos/java/sea001.jpeg" alt="kamakura02"></p>
 <blockquote>
 <p>从浏览器发送给服务器的数据包称之为 请求 Request</p>
 <p>从服务器返回给浏览器的结果称之为 响应 Response</p>
@@ -396,181 +295,37 @@
 </blockquote>
 <p>虽然已经2021年了，但是Servlet依旧还是很重要的。SpringMVC和SpringBoot的底层都是Servlet有关的</p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/Servlet/" rel="tag"># Servlet</a>
+              <a href="/tags/Java/" rel="tag"># Java</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/22/My-new-post/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/WechatIMG48.jpeg">
-      <meta itemprop="name" content="Sieg Friedrich">
-      <meta itemprop="description" content="Hello everyone~ my name is Sieg. A full-stack developer.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/08/22/My-new-post/" class="post-title-link" itemprop="url">My new post</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-08-22 22:57:40" itemprop="dateCreated datePublished" datetime="2021-08-22T22:57:40+09:00">2021-08-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-08-26 00:08:48" itemprop="dateModified" datetime="2021-08-26T00:08:48+09:00">2021-08-26</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%83%85%E6%84%9F/" itemprop="url" rel="index"><span itemprop="name">情感</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="../photos/feelings/kamakura02.jpg" alt="kamakura02"></p>
-<h2 id="重新学习"><a href="#重新学习" class="headerlink" title="重新学习"></a>重新学习</h2><p>人就是 不断学习，忘记，再学习这样一段过程。</p>
-<p>去年玩了这个Hexo的NexT主题，但是今年全忘记了。也没把安装过程写详细。之前的博客由于懒，没有备份Markdown格式，全是HTML格式无法做好迁移。</p>
-<p>没办法，今天重新拾起来。以后博客继续写起来。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/08/22/My-new-post/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/22/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/WechatIMG48.jpeg">
-      <meta itemprop="name" content="Sieg Friedrich">
-      <meta itemprop="description" content="Hello everyone~ my name is Sieg. A full-stack developer.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/08/22/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-08-22 21:01:40" itemprop="dateCreated datePublished" datetime="2021-08-22T21:01:40+09:00">2021-08-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-08-26 00:17:09" itemprop="dateModified" datetime="2021-08-26T00:17:09+09:00">2021-08-26</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/08/22/hello-world/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/08/22/My-new-post/" rel="prev" title="My new post">
+      <i class="fa fa-chevron-left"></i> My new post
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/08/25/UI-UX-Learning-1-Introduction-Getting-Started/" rel="next" title="UI/UX Learning 01 Introduction & Getting Started">
+      UI/UX Learning 01 Introduction & Getting Started <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-
   
 
 
@@ -623,6 +378,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Servlet%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">Servlet概述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#J2EE-%E5%92%8C-Tomcat%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">1.0.1.</span> <span class="nav-text">J2EE 和 Tomcat的关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mac%E4%B8%8B%E5%AE%89%E8%A3%85%E5%B9%B6%E5%90%AF%E5%8A%A8-Tomcat"><span class="nav-number">1.0.2.</span> <span class="nav-text">Mac下安装并启动 Tomcat</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Servlet%E5%88%9B%E5%BB%BA%E4%B8%8E%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="nav-number">1.1.</span> <span class="nav-text">Servlet创建与生命周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E8%A7%A3%E9%85%8D%E7%BD%AEServlet"><span class="nav-number">1.2.</span> <span class="nav-text">注解配置Servlet</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
